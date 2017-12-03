@@ -1,0 +1,26 @@
+<html>
+	<body>
+
+		<H1>Hello, <%=  %></H1>
+		
+		<ol>
+			<% c.forEach(function(a) { %>
+				<li><a href=/showdetails?id=<%= a._id %>><%= a.name %></a></li>
+			<% });                        %>
+		</ol>
+		
+		
+    	<form action="/createRest" method="get">
+    		<input type="submit" value="create restaurant">
+    	</form>
+    	<form action="/logout" method="get">
+    		<input type="submit" value="logout">
+    	</form>
+    	<form action="/search" method="get">
+    		<input type="submit" value="search">
+    	</form>
+
+    </body>
+</html>
+
+

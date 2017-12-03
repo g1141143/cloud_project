@@ -1,0 +1,86 @@
+<html>
+	<body>
+		<%if (detail._id != null) {%>
+		<p>ID: <%= detail._id %></p>
+		<% } %>
+		<%if (detail.name != null) {%>		
+		<p>Name: <%= detail.name %></p>
+		<% } %>
+		<%if (detail.borough != null) {%>
+		<p>Borough: <%= detail.borough %></p>
+		<% } %>
+		<%if (detail.cuisine != null) {%>
+		<p>Cuisine: <%= detail.cuisine %></p>
+		<% } %>
+		<%if (detail.photo != null) {%>
+		<p>Photo: <%= detail.photo %></p>
+		<% } %>
+		<%if (detail.photoMimetype != null) {%>
+		<p>photoMimetype: <%= detail.photoMimetype %></p>
+		<% } %>
+
+		<%if (detail.address.street != null || detail.address.building != null || detail.address.zipcode != null || detail.address.coord != null) { %>
+		<br><p>Address: </p>
+		<% } %>
+
+		<%if (detail.address.street != null) {%>
+		<p>Street: <%= detail.address.street %></p>
+		<% } %>
+		<%if (detail.address.building != null) {%>
+		<p>Building: <%= detail.address.building %></p>
+		<% } %>
+		<%if (detail.address.zipcode != null) {%>
+		<p>Zip Code: <%= detail.address.zipcode %></p>
+		<% } %>
+		<%if (detail.address.coord != null) {%>
+		<p>Coordinate: <%= detail.address.coord %></p><br>
+		<% } %>
+		
+		
+		
+		<%if (detail.grade != ''){ %>
+			<br><p>Grades: </p>
+			<ol>
+				<% detail.grade.forEach(function(a) { %>
+					<li><!--<a href=/showscore?user=<%= a.user %>>/--><%= a.user %></a>  <%= a.score%></li>
+				<% });                        %>
+			</ol>
+		<% } %>
+		<!--
+		
+		
+		<%if (detail.grade.user != null || detail.grade.score != null) { %>
+		<br><p>Grades: </p>
+		<% } %>
+		<%if (detail.grade.user != '') {%>
+		<p>User: <%= detail.grade.user %></p>
+		<% } %>
+		<%if (detail.grade.score != '') {%>
+		<p>Score: <%= detail.grade.score %></p>
+		<% } %>
+		/-->
+		<%if (detail.owner != null) {%>
+		<br><p>Owner: <%= detail.owner %></p>
+		<% } %>
+		<form action="/update" method="get">
+    		<input type="submit" value="update">
+    	</form>
+    	<form action="/rate" method="get">
+    		<input type="submit" value="rate">
+    	</form>
+    	<form action="/delete" method="get">
+    		<input type="submit" value="delete">
+    	</form>
+    	<form action="/googlemap" method="get">
+    		<input type="submit" value="googlemap">
+    	</form>
+    	<form action="/gohome" method="get">
+			<input type="submit" value="home"><br>
+		</form>
+
+	</body>
+</html>
+
+
+
+
